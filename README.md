@@ -21,6 +21,12 @@
    6) `Application State` is pumped back to the app
    7) All Components re-render 
       ```
+      > function mapDispatchToProps(dispatch){
+      >   return bindActionCreators({selectBook: selectBook}, dispatch);
+      > }
+      ```
+      
+      ```
       > function mapStateToProps(state){
       >   return { books: state.books };
       > }
