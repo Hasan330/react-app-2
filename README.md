@@ -26,11 +26,6 @@
       > }
       ```
       
-      ```
-      > function mapStateToProps(state){
-      >   return { books: state.books };
-      > }
-      ```
 - Binding Action Creators (using `mapDispatchToProps --> bindActionCreators` and `mapStateToProps`
 - Reducers get 2 args (state, action)
 - Reducers are all combined via a `combineReducers` method insisde `reducers/index.js`
