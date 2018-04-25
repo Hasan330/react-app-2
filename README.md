@@ -22,7 +22,7 @@
    7) All Components re-render 
       ```
       > function mapDispatchToProps(dispatch){
-      >   return bindActionCreators({selectBook: selectBook}, dispatch);
+      >   return { books: state.books };
       > }
       ```
       
