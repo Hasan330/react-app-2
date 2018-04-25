@@ -1,23 +1,37 @@
-# ReduxSimpleStarter
+# React Redux Book App 
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+## Topics Covered:
+- `Redux`      --> State container for JS Apps
+- `Reducers`   --> Functions that return piece of application state
+- `Containers` --> A React-Component that has a direct connection to the state managed by Redux
+- `react-redux` library
+- `mapStateToProps` function to link between React and Redux containers (returns to this.props)
+- `connect` function: takes in 2 args (a function and a component)--> Turns a `Component` into a `Container`
+- The Action Creation Lifecycle:
+   1) User Clicks a button on a component and calls an `Action Creator`
+   2) `Action Creator` returns an `Action Object` --> {type, payload}
+   2.5) `Action` passes through middleware when middleware is applied (optional)
+   3) `Action Object` is sent to all `Reducers`
+      ```
+      > function mapDispatchToProps(dispatch){
+      >   return bindActionCreators({selectBook: selectBook}, dispatch);
+      > }
+      ```
+   4) Piece of `state` is set to the new value returned by the Reducer and piped to the `Application State`
+   5) `Application State` is pumped back to the app
+   6) All Components re-render 
+      ```
+       > function mapStateToProps(state){
+       >   return { books: state.books }
+       > }
+       ```
+- Binding Action Creators (using `mapDispatchToProps --> bindActionCreators` and `mapStateToProps`
+- Reducers get 2 args (state, action)
+- Reducers are all combined via a `combineReducers` method insisde `reducers/index.js`
+- Binding Context
 
-### Getting Started
 
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+### Getting started:
 
 ```
 > npm install
